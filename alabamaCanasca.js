@@ -61,3 +61,36 @@ function calculatePoints() {
         console.log(teams[0].Name, ":", teams[0].Points);
     });
 }
+
+function addPoints(team) {
+                event.preventDefault();
+                team = team.toString();
+                var index = teams.findIndex(teams => teams.Name === team);
+                var thisForm = document.forms[team]
+                teams[index].Points += ((thisForm.elements.clean.value)*300) + ((thisForm.elements.dirty.value)*100);
+                console.log(teams[index].Points);
+                document.getElementById(team+"-preview").innerHTML = teams[index].Points;
+}
+function previewPoints(value) {
+                var preview = document.getElementById(value.name+"-preview");
+                var previewPoints = 0;
+                var thisFormInput = value.getElementsByTagName("input");
+                console.log(thisFormInput);
+                for (i=0; i < thisFormInput.length; i++) {
+                                if (thisFormInput[i].value >= 1) {
+                                                switch(thisFormInput[i].name) {
+                                                                case "clean":
+                                                                                previewPoints += thisFormInput[i].value * 300;
+                                                                                break;
+                                                                case "dirty":
+                                                                                previewPoints += thisFormInput[i].value * 100;
+                                                                                break;
+                                                                case "cards":
+                                                                                previewPoints += thisFormInput[i].value * 50;
+                                                }
+                                } else {
+                                                continue
+                                }
+                                preview.innerHTML = previewPoints;
+                }
+}
