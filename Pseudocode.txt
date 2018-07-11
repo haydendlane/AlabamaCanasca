@@ -1,0 +1,21 @@
+Goal:
+Calculate and store points for teams based on books and individual cards
+
+Milestones:
+1. Setup team to save points to - DONE 5/10/18
+2. Allow user to input number of books - whether "clean" or "dirty" and have them calculated
+3. Allow user to input number of #, face, wilds, and joker cards and have them calculated
+4. Allow user to input number of #, face, wilds, and jokers cards and have them negated
+5. Display team points
+6. Allow user to reset points and teams
+7. Allow user to edit previous entries in case of typos
+8. Prevent duplicate team names from being created, and display a message
+
+Milestone 1: Setup teams or individuals to save points to
+1. Init arr teams = []
+2. Set button id="create-team" to create newTeam when clicked
+3. Set newTeam with Name and Points keys where Name = (input from "create-team") and Points = 0
+4. Push newTeam to teams array
+
+Milestone 2: Allow user to input number of books - whether "clean" or "dirty" and have them calculated
+1. 

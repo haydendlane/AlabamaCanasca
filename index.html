@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alabama Canasca</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body {text-align: center;}
+    </style>
+</head>
+<body class="content container-fluid">
+    <h2>Select your team</h2>
+    <div id="myGroup">
+        <button class="btn btn-primary" data-toggle="collapse" data-target="#team1">The Knowledgeable Porcupines (Team 1)</button>
+        <div id="team1" class="collapse">
+            <h2># of Books to add</h2>
+            <h3>Clean</h3>
+            <form>
+                <input type="number" placeholder="0" min="0" id="clean-books"/>
+                <button class="btn" id="plus-one">+</button>
+                <button class="btn" id="minus-one">-</button>
+                <button class="btn" id="calculate-points">Enter</button>
+            </form>
+            <h3>Dirty</h3>
+            <form>
+                <input type="number" placeholder="0" min="0" id="dirty-books"/>
+                <button class="btn" id="plus-one">+</button>
+                <button class="btn" id="minus-one">-</button>
+                <button class="btn" id="calculate-points">Enter</button>
+        </div>
+        <br>
+        <button class="btn btn-primary" data-toggle="collapse" data-target="#team2">The Cooing Hedgehogs (Team 2)</button>
+        <div id="team2" class="collapse">
+            <h2># of Books to add</h2>
+            <h3>Clean</h3>
+            <form>
+                <input type="number" placeholder="0" min="0" id="clean-books"/>
+                <button class="btn" id="plus-one">+</button>
+                <button class="btn" id="minus-one">-</button>
+                <button class="btn" id="calculate-points">Enter</button>
+            </form>
+            <h3>Dirty</h3>
+            <form>
+                <input type="number" placeholder="0" min="0" id="dirty-books"/>
+                <button class="btn" id="plus-one">+</button>
+                <button class="btn" id="minus-one">-</button>
+                <button class="btn" id="calculate-points">Enter</button>
+        </div>
+        <br>
+        <button class="btn btn-primary" data-toggle="collapse" data-target="#team3">The Violet Crabs (Team 3)</button>
+        <div id="team3" class="collapse">
+            <h2># of Books to add</h2>
+            <h3>Clean</h3>
+            <form>
+                <input type="number" placeholder="0" min="0" id="clean-books"/>
+                <button class="btn" id="plus-one">+</button>
+                <button class="btn" id="minus-one">-</button>
+                <button class="btn" id="calculate-points">Enter</button>
+            </form>
+            <h3>Dirty</h3>
+            <form>
+                <input type="number" placeholder="0" min="0" id="dirty-books"/>
+                <button class="btn" id="plus-one">+</button>
+                <button class="btn" id="minus-one">-</button>
+                <button class="btn" id="calculate-points">Enter</button>
+        </div>
+        <br>
+        <button class="btn btn-primary" data-toggle="collapse" data-target="#team4">The Tough Bears (Team 4)</button>
+        <div id="team4" class="collapse">
+            <h2># of Books to add</h2>
+            <h3>Clean</h3>
+            <form>
+                <input type="number" placeholder="0" min="0" id="clean-books"/>
+                <button class="btn" id="plus-one">+</button>
+                <button class="btn" id="minus-one">-</button>
+                <button class="btn" id="calculate-points">Enter</button>
+            </form>
+            <h3>Dirty</h3>
+            <form>
+                <input type="number" placeholder="0" min="0" id="dirty-books"/>
+                <button class="btn" id="plus-one">+</button>
+                <button class="btn" id="minus-one">-</button>
+                <button class="btn" id="calculate-points">Enter</button>
+        </div>
+        <br>
+        <button class="btn btn-primary" data-toggle="collapse" data-target="#team5">The Lucky Moles (Team 5)</button>
+        <div id="team5" class="collapse">
+            <h2># of Books to add</h2>
+            <h3>Clean</h3>
+            <form>
+                <input type="number" placeholder="0" min="0" id="clean-books"/>
+                <button class="btn" id="plus-one">+</button>
+                <button class="btn" id="minus-one">-</button>
+                <button class="btn" id="calculate-points">Enter</button>
+            </form>
+            <h3>Dirty</h3>
+            <form>
+                <input type="number" placeholder="0" min="0" id="dirty-books"/>
+                <button class="btn" id="plus-one">+</button>
+                <button class="btn" id="minus-one">-</button>
+                <button class="btn" id="calculate-points">Enter</button>
+        </div>
+    </div>
+    <button class="btn" id="reset-score">Reset</button>
+    <h2>Score Board:</h2>
+    <div id="score-board">
+        <h3>Team 1</h3>
+        <p id="team1">0</p>
+        <h3>Team 2</h3>
+        <p id="team2">0</p>
+        <h3>Team 3</h3>
+        <p id="team3">0</p>
+        <h3>Team 4</h3>
+        <p id="team4">0</p>
+        <h3>Team 5</h3>
+        <p id="team5">0</p>
+    </div>
+<script src="alabamaCanasca.js"></script>
+<script>
+    var $myGroup = $('#myGroup');
+$myGroup.on('show.bs.collapse','.collapse', function() {
+    $myGroup.find('.collapse.in').collapse('hide');
+});
+</script>
+</body>
+</html>
