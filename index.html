@@ -14,118 +14,273 @@
     </style>
 </head>
 <body class="content container-fluid">
-    <h2>Select your team</h2>
-    <div id="myGroup">
-        <button class="btn btn-primary" data-toggle="collapse" data-target="#team1">The Knowledgeable Porcupines (Team 1)</button>
-        <div id="team1" class="collapse">
-            <h2># of Books to add</h2>
-            <h3>Clean</h3>
-            <form>
-                <input type="number" placeholder="0" min="0" id="clean-books"/>
-                <button class="btn" id="plus-one">+</button>
-                <button class="btn" id="minus-one">-</button>
-                <button class="btn" id="calculate-points">Enter</button>
-            </form>
-            <h3>Dirty</h3>
-            <form>
-                <input type="number" placeholder="0" min="0" id="dirty-books"/>
-                <button class="btn" id="plus-one">+</button>
-                <button class="btn" id="minus-one">-</button>
-                <button class="btn" id="calculate-points">Enter</button>
-        </div>
+    <h2>Alabama Canasca</h2>
+    <form id="team1-form">
+        <fieldset>
+            <h4>Team 1</h4>
+            <h5>Clean</h5>
+            <input type="number" placeholder="0" min="0" name="clean"/>
+            <h5>Dirty</h5>
+            <input type="number" placeholder="0" min="0" name="dirty"/>
+            <h5>Individual Cards</h5>
+            <input type="number" placeholder="0" min="0" name="cards"/>
+            <br/>
+            <div id="team1-preview"></div>
+            <br/>
+            <input type="submit" value="Enter">
+        </fieldset>
+    </form>
+    <br/>
+    <form id="team2-form">
+        <fieldset>
+            <h4>Team 2</h4>
+            <h5>Clean</h5>
+            <input type="number" placeholder="0" min="0" name="clean"/>
+            <h5>Dirty</h5>
+            <input type="number" placeholder="0" min="0" name="dirty"/>
+            <h5>Individual Cards</h5>
+            <input type="number" placeholder="0" min="0" name="cards"/>
+            <br/>
+            <div id="team2-preview"></div>
+            <br/>
+            <input type="submit" value="Enter">
+        </fieldset>
+    </form>
+    <br/>
+    <form id="team3-form">
+        <fieldset>
+            <h4>Team 3</h4>
+            <h5>Clean</h5>
+            <input type="number" placeholder="0" min="0" name="clean"/>
+            <h5>Dirty</h5>
+            <input type="number" placeholder="0" min="0" name="dirty"/>
+            <h5>Individual Cards</h5>
+            <input type="number" placeholder="0" min="0" name="cards"/>
+            <br/>
+            <div id="team3-preview"></div>
+            <br/>
+            <input type="submit" value="Enter">
+        </fieldset>
+    </form>
+    <br/>
+    <form id="team4-form">
+        <fieldset>
+            <h4>Team 4</h4>
+            <h5>Clean</h5>
+            <input type="number" placeholder="0" min="0" name="clean"/>
+            <h5>Dirty</h5>
+            <input type="number" placeholder="0" min="0" name="dirty"/>
+            <h5>Individual Cards</h5>
+            <input type="number" placeholder="0" min="0" name="cards"/>
+            <br/>
+            <div id="team4-preview"></div>
+            <br/>
+            <input type="submit" value="Enter">
+        </fieldset>
+    </form>
+    <br/>
+    <form id="team5-form">
+        <fieldset>
+            <h4>Team 5</h4>
+            <h5>Clean</h5>
+            <input type="number" placeholder="0" min="0" name="clean"/>
+            <h5>Dirty</h5>
+            <input type="number" placeholder="0" min="0" name="dirty"/>
+            <h5>Individual Cards</h5>
+            <input type="number" placeholder="0" min="0" name="cards"/>
+            <br/>
+            <div id="team5-preview"></div>
+            <br/>
+            <input type="submit" value="Enter">
+        </fieldset>
+    </form>
+        <!-- <h3>The Knowledgeable Porcupines (Team 1)</h3>
+                <button class="btn btn-primary" data-toggle="collapse" data-target="#team1-add">Add Points</button>
+                <div id="team1-add" class="collapse">
+                    <form id="form" onsubmit="console.log(this); return false">
+                        <h5>Clean</h5>
+                        <input type="number" placeholder="0" min="0" id="clean-1-add"/>
+                        <h5>Dirty</h5>
+                        <input type="number" placeholder="0" min="0" id="dirty-1-add"/>
+                        <h5>Individual Cards</h5>
+                        <input type="number" placeholder="0" min="0" id="cards-1-add"/>
+                        <input type="submit" value="Enter">
+                    </form>
+                </div>
+                <br/>
+                <button class="btn btn-primary" data-toggle="collapse" data-target="#team1-subtract">Subtract Points</button>
+                <div id="team1-subtract" class="collapse">
+                    <h5>Cards</h5>
+                    <form>
+                        <input type="number" placeholder="0" min="0" id="1-subtract"/>
+                        <button class="btn" id="plus-one">+</button>
+                        <button class="btn" id="minus-one">-</button>
+                        <button class="btn" id="calculate-points">Enter</button>
+                    </form>
+                </div>
         <br>
-        <button class="btn btn-primary" data-toggle="collapse" data-target="#team2">The Cooing Hedgehogs (Team 2)</button>
-        <div id="team2" class="collapse">
-            <h2># of Books to add</h2>
-            <h3>Clean</h3>
-            <form>
-                <input type="number" placeholder="0" min="0" id="clean-books"/>
-                <button class="btn" id="plus-one">+</button>
-                <button class="btn" id="minus-one">-</button>
-                <button class="btn" id="calculate-points">Enter</button>
-            </form>
-            <h3>Dirty</h3>
-            <form>
-                <input type="number" placeholder="0" min="0" id="dirty-books"/>
-                <button class="btn" id="plus-one">+</button>
-                <button class="btn" id="minus-one">-</button>
-                <button class="btn" id="calculate-points">Enter</button>
-        </div>
+        <h3>The Cooing Hedgehogs (Team 2)</h3>
+            <button class="btn btn-primary" data-toggle="collapse" data-target="#team2-add">Add Points</button>
+            <div id="team2-add" class="collapse">
+                <h5>Clean</h5>
+                <form>
+                    <input type="number" placeholder="0" min="0" id="clean-2-add"/>
+                    <button class="btn" id="plus-one">+</button>
+                    <button class="btn" id="minus-one">-</button>
+                    <button class="btn" id="calculate-points">Enter</button>
+                </form>
+                <h5>Dirty</h5>
+                <form>
+                    <input type="number" placeholder="0" min="0" id="dirty-2-add"/>
+                    <button class="btn" id="plus-one">+</button>
+                    <button class="btn" id="minus-one">-</button>
+                    <button class="btn" id="calculate-points">Enter</button>
+                </form>
+                <h5>Individual Cards</h5>
+                <form>
+                    <input type="number" placeholder="0" min="0" id="cards-2-add"/>
+                    <button class="btn" id="plus-one">+</button>
+                    <button class="btn" id="minus-one">-</button>
+                    <button class="btn" id="calculate-points">Enter</button>
+                </form>
+            </div>
+            <br/>
+            <button class="btn btn-primary" data-toggle="collapse" data-target="#team2-subtract">Subtract Points</button>
+            <div id="team2-subtract" class="collapse">
+                <h5>Cards</h5>
+                <form>
+                    <input type="number" placeholder="0" min="0" id="2-subtract"/>
+                    <button class="btn" id="plus-one">+</button>
+                    <button class="btn" id="minus-one">-</button>
+                    <button class="btn" id="calculate-points">Enter</button>
+                </form>
+            </div>
         <br>
-        <button class="btn btn-primary" data-toggle="collapse" data-target="#team3">The Violet Crabs (Team 3)</button>
-        <div id="team3" class="collapse">
-            <h2># of Books to add</h2>
-            <h3>Clean</h3>
-            <form>
-                <input type="number" placeholder="0" min="0" id="clean-books"/>
-                <button class="btn" id="plus-one">+</button>
-                <button class="btn" id="minus-one">-</button>
-                <button class="btn" id="calculate-points">Enter</button>
-            </form>
-            <h3>Dirty</h3>
-            <form>
-                <input type="number" placeholder="0" min="0" id="dirty-books"/>
-                <button class="btn" id="plus-one">+</button>
-                <button class="btn" id="minus-one">-</button>
-                <button class="btn" id="calculate-points">Enter</button>
-        </div>
+        <h3>The Violet Crabs (Team 3)</h3>
+            <button class="btn btn-primary" data-toggle="collapse" data-target="#team3-add">Add Points</button>
+            <div id="team3-add" class="collapse">
+                <h5>Clean</h5>
+                <form>
+                    <input type="number" placeholder="0" min="0" id="clean-3-add"/>
+                    <button class="btn" id="plus-one">+</button>
+                    <button class="btn" id="minus-one">-</button>
+                    <button class="btn" id="calculate-points">Enter</button>
+                </form>
+                <h5>Dirty</h5>
+                <form>
+                    <input type="number" placeholder="0" min="0" id="dirty-3-add"/>
+                    <button class="btn" id="plus-one">+</button>
+                    <button class="btn" id="minus-one">-</button>
+                    <button class="btn" id="calculate-points">Enter</button>
+                </form>
+                <h5>Individual Cards</h5>
+                <form>
+                    <input type="number" placeholder="0" min="0" id="cards-3-add"/>
+                    <button class="btn" id="plus-one">+</button>
+                    <button class="btn" id="minus-one">-</button>
+                    <button class="btn" id="calculate-points">Enter</button>
+                </form>
+            </div>
+            <br/>
+            <button class="btn btn-primary" data-toggle="collapse" data-target="#team3-subtract">Subtract Points</button>
+            <div id="team3-subtract" class="collapse">
+                <h5>Cards</h5>
+                <form>
+                    <input type="number" placeholder="0" min="0" id="3-subtract"/>
+                    <button class="btn" id="plus-one">+</button>
+                    <button class="btn" id="minus-one">-</button>
+                    <button class="btn" id="calculate-points">Enter</button>
+                </form>
+            </div>
         <br>
-        <button class="btn btn-primary" data-toggle="collapse" data-target="#team4">The Tough Bears (Team 4)</button>
-        <div id="team4" class="collapse">
-            <h2># of Books to add</h2>
-            <h3>Clean</h3>
-            <form>
-                <input type="number" placeholder="0" min="0" id="clean-books"/>
-                <button class="btn" id="plus-one">+</button>
-                <button class="btn" id="minus-one">-</button>
-                <button class="btn" id="calculate-points">Enter</button>
-            </form>
-            <h3>Dirty</h3>
-            <form>
-                <input type="number" placeholder="0" min="0" id="dirty-books"/>
-                <button class="btn" id="plus-one">+</button>
-                <button class="btn" id="minus-one">-</button>
-                <button class="btn" id="calculate-points">Enter</button>
-        </div>
+        <h3>The Tough Bears (Team 4)</h3>
+            <button class="btn btn-primary" data-toggle="collapse" data-target="#team4-add">Add Points</button>
+            <div id="team4-add" class="collapse">
+                <h5>Clean</h5>
+                <form>
+                    <input type="number" placeholder="0" min="0" id="clean-4-add"/>
+                    <button class="btn" id="plus-one">+</button>
+                    <button class="btn" id="minus-one">-</button>
+                    <button class="btn" id="calculate-points">Enter</button>
+                </form>
+                <h5>Dirty</h5>
+                <form>
+                    <input type="number" placeholder="0" min="0" id="dirty-4-add"/>
+                    <button class="btn" id="plus-one">+</button>
+                    <button class="btn" id="minus-one">-</button>
+                    <button class="btn" id="calculate-points">Enter</button>
+                </form>
+                <h5>Individual Cards</h5>
+                <form>
+                    <input type="number" placeholder="0" min="0" id="cards-4-add"/>
+                    <button class="btn" id="plus-one">+</button>
+                    <button class="btn" id="minus-one">-</button>
+                    <button class="btn" id="calculate-points">Enter</button>
+                </form>
+            </div>
+            <br/>
+            <button class="btn btn-primary" data-toggle="collapse" data-target="#team4-subtract">Subtract Points</button>
+            <div id="team4-subtract" class="collapse">
+                <h5>Cards</h5>
+                <form>
+                    <input type="number" placeholder="0" min="0" id="4-subtract"/>
+                    <button class="btn" id="plus-one">+</button>
+                    <button class="btn" id="minus-one">-</button>
+                    <button class="btn" id="calculate-points">Enter</button>
+                </form>
+            </div>
         <br>
-        <button class="btn btn-primary" data-toggle="collapse" data-target="#team5">The Lucky Moles (Team 5)</button>
-        <div id="team5" class="collapse">
-            <h2># of Books to add</h2>
-            <h3>Clean</h3>
-            <form>
-                <input type="number" placeholder="0" min="0" id="clean-books"/>
-                <button class="btn" id="plus-one">+</button>
-                <button class="btn" id="minus-one">-</button>
-                <button class="btn" id="calculate-points">Enter</button>
-            </form>
-            <h3>Dirty</h3>
-            <form>
-                <input type="number" placeholder="0" min="0" id="dirty-books"/>
-                <button class="btn" id="plus-one">+</button>
-                <button class="btn" id="minus-one">-</button>
-                <button class="btn" id="calculate-points">Enter</button>
-        </div>
-    </div>
+        <h3>The Lucky Moles (Team 5)</h3>
+            <button class="btn btn-primary" data-toggle="collapse" data-target="#team5-add">Add Points</button>
+            <div id="team5-add" class="collapse">
+                <h5>Clean</h5>
+                <form>
+                    <input type="number" placeholder="0" min="0" id="clean-5-add"/>
+                    <button class="btn" id="plus-one">+</button>
+                    <button class="btn" id="minus-one">-</button>
+                    <button class="btn" id="calculate-points">Enter</button>
+                </form>
+                <h5>Dirty</h5>
+                <form>
+                    <input type="number" placeholder="0" min="0" id="dirty-5-add"/>
+                    <button class="btn" id="plus-one">+</button>
+                    <button class="btn" id="minus-one">-</button>
+                    <button class="btn" id="calculate-points">Enter</button>
+                </form>
+                <h5>Individual Cards</h5>
+                <form>
+                    <input type="number" placeholder="0" min="0" id="cards-5-add"/>
+                    <button class="btn" id="plus-one">+</button>
+                    <button class="btn" id="minus-one">-</button>
+                    <button class="btn" id="calculate-points">Enter</button>
+                </form>
+            </div>
+            <br/>
+            <button class="btn btn-primary" data-toggle="collapse" data-target="#team5-subtract">Subtract Points</button>
+            <div id="team5-subtract" class="collapse">
+                <h5>Cards</h5>
+                <form>
+                    <input type="number" placeholder="0" min="0" id="5-subtract"/>
+                    <button class="btn" id="plus-one">+</button>
+                    <button class="btn" id="minus-one">-</button>
+                    <button class="btn" id="calculate-points">Enter</button>
+                </form>
+            </div>
+    <br/> -->
     <button class="btn" id="reset-score">Reset</button>
     <h2>Score Board:</h2>
     <div id="score-board">
         <h3>Team 1</h3>
-        <p id="team1">0</p>
+        <p id="team1-score">0</p>
         <h3>Team 2</h3>
-        <p id="team2">0</p>
+        <p id="team2-score">0</p>
         <h3>Team 3</h3>
-        <p id="team3">0</p>
+        <p id="team3-score">0</p>
         <h3>Team 4</h3>
-        <p id="team4">0</p>
+        <p id="team4-score">0</p>
         <h3>Team 5</h3>
-        <p id="team5">0</p>
+        <p id="team5-score">0</p>
     </div>
-<script src="alabamaCanasca.js"></script>
-<script>
-    var $myGroup = $('#myGroup');
-$myGroup.on('show.bs.collapse','.collapse', function() {
-    $myGroup.find('.collapse.in').collapse('hide');
-});
-</script>
+<script src="alabamaCanascaNEW.js"></script>
 </body>
 </html>

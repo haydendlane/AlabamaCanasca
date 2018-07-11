@@ -16,9 +16,16 @@ document.getElementById("reset-score").addEventListener("click", function(event)
 
     event.preventDefault();
     
-    var confirmReset = confirm("Do you want to reset score?")
+    var confirmReset = confirm("Do you want to reset score?");
     if (confirmReset == true) {
-        scoreBoard.innerHTML = "";
+        scoreBoard.querySelectorAll("p").innerHTML = "";
+        var teams = [
+            {'Name': "team1", 'Points': 0},
+            {'Name': "team2", 'Points': 0},
+            {'Name': "team3", 'Points': 0},
+            {'Name': "team4", 'Points': 0},
+            {'Name': "team5", 'Points': 0}
+        ];
     }
 });
 
@@ -42,12 +49,15 @@ document.getElementById("minus-one").addEventListener("click",function(event) {
         document.getElementById("clean-books").value = counter;
     }
 });
-document.getElementById("calculate-points").addEventListener("click",function(event) {
-    
-    event.preventDefault();
-    
-    pointsToAdd = document.getElementById("clean-books").value * CLEAN_BOOK;
-    teams[0].Points += pointsToAdd;
-    document.getElementById(teams[0].Name).innerHTML = teams[0].Points;
-    console.log(teams[0].Name, ":", teams[0].Points);
-});
+
+function calculatePoints() {
+    document.getElementById("calculate-points").addEventListener("click",function(event) {
+        
+        event.preventDefault();
+        
+        pointsToAdd = document.getElementById("clean-1-add").value * CLEAN_BOOK;
+        teams[0].Points += pointsToAdd;
+        document.getElementById(teams[0].Name + "-score").innerHTML = teams[0].Points;
+        console.log(teams[0].Name, ":", teams[0].Points);
+    });
+}
