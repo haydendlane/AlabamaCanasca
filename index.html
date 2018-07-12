@@ -15,9 +15,10 @@
 </head>
 <body class="content container-fluid">
     <h2>Alabama Canasca</h2>
-    <form name="team1" onsubmit="addPoints(this.name)" onchange="previewPoints(this)">
+    <h3>Team 1</h3>
+    <form name="team1-add" onsubmit="addPoints(this.name)" onchange="previewPoints(this)">
        <fieldset>
-            <h4>Team 1</h4>
+            <h4>Add Points</h4>
             <h5>Clean</h5>
             <input type="number" placeholder="0" min="0" name="clean"/>
             <h5>Dirty</h5>
@@ -25,15 +26,32 @@
             <h5>Individual Cards</h5>
             <input type="number" placeholder="0" min="0" name="cards"/>
             <br/>
-            <div id="team1-preview"></div>
+            <div id="team1-add-preview"></div>
             <br/>
             <button class="btn" type="submit" value="Enter">Enter</button>
         </fieldset>
     </form>
     <br/>
-    <form name="team2" onsubmit="addPoints(this.name)" onchange="previewPoints(this)">
+    <form name="team1-subtract" onsubmit="subtractPoints(this.name)" onchange="previewPoints(this)">
         <fieldset>
-            <h4>Team 2</h4>
+             <h4>Subtract Points</h4>
+             <h5>Clean</h5>
+             <input type="number" placeholder="0" min="0" name="clean"/>
+             <h5>Dirty</h5>
+             <input type="number" placeholder="0" min="0" name="dirty"/>
+             <h5>Individual Cards</h5>
+             <input type="number" placeholder="0" min="0" name="cards"/>
+             <br/>
+             <div id="team1-subtract-preview"></div>
+             <br/>
+             <button class="btn" type="submit" value="Enter">Enter</button>
+         </fieldset>
+     </form>
+    <br/>
+    <h3>Team 2</h3>
+    <form name="team2-add" onsubmit="addPoints(this.name)" onchange="previewPoints(this)">
+        <fieldset>
+            <h4>Add Points</h4>
             <h5>Clean</h5>
             <input type="number" placeholder="0" min="0" name="clean"/>
             <h5>Dirty</h5>
@@ -41,15 +59,32 @@
             <h5>Individual Cards</h5>
             <input type="number" placeholder="0" min="0" name="cards"/>
             <br/>
-            <div id="team2-preview"></div>
+            <div id="team2-add-preview"></div>
             <br/>
             <button class="btn" type="submit" value="Enter">Enter</button>
         </fieldset>
     </form>
     <br/>
-    <form name="team3" onsubmit="addPoints(this.name)" onchange="previewPoints(this)">
+    <form name="team2-subtract" onsubmit="subtractPoints(this.name)" onchange="previewPoints(this)">
         <fieldset>
-            <h4>Team 3</h4>
+             <h4>Subtract Points</h4>
+             <h5>Clean</h5>
+             <input type="number" placeholder="0" min="0" name="clean"/>
+             <h5>Dirty</h5>
+             <input type="number" placeholder="0" min="0" name="dirty"/>
+             <h5>Individual Cards</h5>
+             <input type="number" placeholder="0" min="0" name="cards"/>
+             <br/>
+             <div id="team2-subtract-preview"></div>
+             <br/>
+             <button class="btn" type="submit" value="Enter">Enter</button>
+         </fieldset>
+     </form>
+    <br/>
+    <h3>Team 3</h3>
+    <form name="team3-add" onsubmit="addPoints(this.name)" onchange="previewPoints(this)">
+        <fieldset>
+            <h4>Add Points</h4>
             <h5>Clean</h5>
             <input type="number" placeholder="0" min="0" name="clean"/>
             <h5>Dirty</h5>
@@ -57,15 +92,32 @@
             <h5>Individual Cards</h5>
             <input type="number" placeholder="0" min="0" name="cards"/>
             <br/>
-            <div id="team3-preview"></div>
+            <div id="team3-add-preview"></div>
             <br/>
             <button class="btn" type="submit" value="Enter">Enter</button>
         </fieldset>
     </form>
     <br/>
-    <form name="team4" onsubmit="addPoints(this.name)" onchange="previewPoints(this)">
+    <form name="team3-subtract" onsubmit="subtractPoints(this.name)" onchange="previewPoints(this)">
         <fieldset>
-            <h4>Team 4</h4>
+             <h4>Subtract Points</h4>
+             <h5>Clean</h5>
+             <input type="number" placeholder="0" min="0" name="clean"/>
+             <h5>Dirty</h5>
+             <input type="number" placeholder="0" min="0" name="dirty"/>
+             <h5>Individual Cards</h5>
+             <input type="number" placeholder="0" min="0" name="cards"/>
+             <br/>
+             <div id="team3-subtract-preview"></div>
+             <br/>
+             <button class="btn" type="submit" value="Enter">Enter</button>
+         </fieldset>
+     </form>
+    <br/>
+    <h3>Team 4</h3>
+    <form name="team4-add" onsubmit="addPoints(this.name)" onchange="previewPoints(this)">
+        <fieldset>
+            <h4>Add Points</h4>
             <h5>Clean</h5>
             <input type="number" placeholder="0" min="0" name="clean"/>
             <h5>Dirty</h5>
@@ -73,15 +125,32 @@
             <h5>Individual Cards</h5>
             <input type="number" placeholder="0" min="0" name="cards"/>
             <br/>
-            <div id="team4-preview"></div>
+            <div id="team4-add-preview"></div>
             <br/>
             <button class="btn" type="submit" value="Enter">Enter</button>
         </fieldset>
     </form>
     <br/>
-    <form name="team5" onsubmit="addPoints(this.name)" onchange="previewPoints(this)">
+    <form name="team4-subtract" onsubmit="subtractPoints(this.name)" onchange="previewPoints(this)">
         <fieldset>
-            <h4>Team 5</h4>
+             <h4>Subtract Points</h4>
+             <h5>Clean</h5>
+             <input type="number" placeholder="0" min="0" name="clean"/>
+             <h5>Dirty</h5>
+             <input type="number" placeholder="0" min="0" name="dirty"/>
+             <h5>Individual Cards</h5>
+             <input type="number" placeholder="0" min="0" name="cards"/>
+             <br/>
+             <div id="team4-subtract-preview"></div>
+             <br/>
+             <button class="btn" type="submit" value="Enter">Enter</button>
+         </fieldset>
+     </form>
+    <br/>
+    <h3>Team 5</h3>
+    <form name="team5-add" onsubmit="addPoints(this.name)" onchange="previewPoints(this)">
+        <fieldset>
+            <h4>Add Points</h4>
             <h5>Clean</h5>
             <input type="number" placeholder="0" min="0" name="clean"/>
             <h5>Dirty</h5>
@@ -89,11 +158,27 @@
             <h5>Individual Cards</h5>
             <input type="number" placeholder="0" min="0" name="cards"/>
             <br/>
-            <div id="team5-preview"></div>
+            <div id="team5-add-preview"></div>
             <br/>
             <button class="btn" type="submit" value="Enter">Enter</button>
         </fieldset>
     </form>
+    <br/>
+    <form name="team5-subtract" onsubmit="subtractPoints(this.name)" onchange="previewPoints(this)">
+        <fieldset>
+             <h4>Subtract Points</h4>
+             <h5>Clean</h5>
+             <input type="number" placeholder="0" min="0" name="clean"/>
+             <h5>Dirty</h5>
+             <input type="number" placeholder="0" min="0" name="dirty"/>
+             <h5>Individual Cards</h5>
+             <input type="number" placeholder="0" min="0" name="cards"/>
+             <br/>
+             <div id="team5-subtract-preview"></div>
+             <br/>
+             <button class="btn" type="submit" value="Enter">Enter</button>
+         </fieldset>
+     </form>
     <button class="btn" id="reset-score">Reset</button>
     <h2>Score Board:</h2>
     <div id="score-board">
