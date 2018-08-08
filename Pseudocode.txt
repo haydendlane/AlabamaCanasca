@@ -10,5 +10,6 @@ Milestones:
 6. Allow user to reset points and teams - DONE
 
 Wishlist:
-1. Allow user to edit previous entries in case of typos
-2. Allow custom team names to be created
+1. Allow points to be saved in LocalStorage to preserve points after refresh
+2. Allow user to edit previous entries in case of typos
+3. Allow custom team names to be created
