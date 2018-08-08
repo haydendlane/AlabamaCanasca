@@ -11,168 +11,265 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
         body {text-align: center;}
+        label {display: block;}
+        #score-board-header {font-size: 1.4em;}
     </style>
 </head>
 <body class="content container-fluid">
     <h2>Alabama Canasta</h2>
     <h3>Team 1</h3>
-    <form name="team1-add" class="team1" onsubmit="addPoints(this.className)" onchange="previewPoints(this)">
-       <fieldset>
-            <h4>Add Points</h4>
-            <h5>Clean</h5>
-            <input type="number" placeholder="0" min="0" name="clean"/>
-            <h5>Dirty</h5>
-            <input type="number" placeholder="0" min="0" name="dirty"/>
-            <h5>Individual Cards</h5>
-            <input type="number" placeholder="0" min="0" name="cards"/>
-            <br/>
-            <div id="team1-add-preview"></div>
-            <br/>
-            <button class="btn" type="submit" value="Enter">Enter</button>
-        </fieldset>
-    </form>
-    <br/>
-    <form name="team1-subtract" class="team1" onsubmit="subtractPoints(this.className)" onchange="previewPoints(this)">
+    <button class="btn btn-success" data-toggle="collapse" data-target="#team1-add-collapse">Add</button>
+    <button class="btn btn-danger" data-toggle="collapse" data-target="#team1-subtract-collapse">Subtract</button>
+    <div id="team1-add-collapse" class="collapse">
+        <form name="team1-add" class="team1" onsubmit="addPoints(this.className)" onchange="previewPoints(this)">
         <fieldset>
-             <h4>Subtract Points</h4>
-             <h5>Individual Cards</h5>
-             <input type="number" placeholder="0" min="0" name="cards"/>
-             <br/>
-             <div id="team1-subtract-preview"></div>
-             <br/>
-             <button class="btn" type="submit" value="Enter">Enter</button>
-         </fieldset>
-     </form>
+                <h4>Add Points</h4>
+                <label for="team1-add-clean">Clean Books</label>
+                <input type="number" placeholder="0" min="0" id="team1-add-clean" name="clean"/>
+                <label for"team1-add-dirty">Dirty Books</label>
+                <input type="number" placeholder="0" min="0" id="team1-add-dirty" name="dirty"/>
+                <label for"team1-add-numbered">Numbered</label>
+                <input type="number" placeholder="0" min="0" id="team1-add-numbered" name="cards-numbered"/>
+                <label for"team1-add-face">Face</label>
+                <input type="number" placeholder="0" min="0" id="team1-add-face" name="cards-face"/>
+                <label for"team1-add-wild">Wild</label>
+                <input type="number" placeholder="0" min="0" id="team1-add-wild" name="cards-wild"/>
+                <label for"team1-add-joker">Joker</label>
+                <input type="number" placeholder="0" min="0" id="team1-add-joker" name="cards-joker"/>
+                <br/>
+                <div id="team1-add-preview"></div>
+                <br/>
+                <button class="btn" type="submit" value="Enter">Enter</button>
+            </fieldset>
+        </form>
+    </div>
+    <br/>
+    <div id="team1-subtract-collapse" class="collapse">
+        <form name="team1-subtract" class="team1" onsubmit="subtractPoints(this.className)" onchange="previewPoints(this)">
+            <fieldset>
+                <h4>Subtract Points</h4>
+                <label for"team1-subtract-numbered">Numbered</label>
+                <input type="number" placeholder="0" min="0" id="team1-subtract-numbered" name="cards-numbered"/>
+                <label for"team1-subtract-face">Face</label>
+                <input type="number" placeholder="0" min="0" id="team1-subtract-face" name="cards-face"/>
+                <label for"team1-subtract-wild">Wild</label>
+                <input type="number" placeholder="0" min="0" id="team1-subtract-wild" name="cards-wild"/>
+                <label for"team1-subtract-joker">Joker</label>
+                <input type="number" placeholder="0" min="0" id="team1-subtract-joker" name="cards-joker"/>
+                <label for"team1-subtract-red-three">Red Three</label>
+                <input type="number" placeholder="0" min="0" id="team1-subtract-red-three" name="cards-red-three"/>
+                <br/>
+                <div id="team1-subtract-preview"></div>
+                <br/>
+                <button class="btn" type="submit" value="Enter">Enter</button>
+            </fieldset>
+        </form>
+    </div>
     <br/>
     <h3>Team 2</h3>
-    <form name="team2-add" class="team2" onsubmit="addPoints(this.className)" onchange="previewPoints(this)">
-        <fieldset>
-            <h4>Add Points</h4>
-            <h5>Clean</h5>
-            <input type="number" placeholder="0" min="0" name="clean"/>
-            <h5>Dirty</h5>
-            <input type="number" placeholder="0" min="0" name="dirty"/>
-            <h5>Individual Cards</h5>
-            <input type="number" placeholder="0" min="0" name="cards"/>
-            <br/>
-            <div id="team2-add-preview"></div>
-            <br/>
-            <button class="btn" type="submit" value="Enter">Enter</button>
-        </fieldset>
-    </form>
+    <button class="btn btn-success" data-toggle="collapse" data-target="#team2-add-collapse">Add</button>
+    <button class="btn btn-danger" data-toggle="collapse" data-target="#team2-subtract-collapse">Subtract</button>
+    <div id="team2-add-collapse" class="collapse">
+        <form name="team2-add" class="team2" onsubmit="addPoints(this.className)" onchange="previewPoints(this)">
+            <fieldset>
+                <h4>Add Points</h4>
+                <label for="team2-add-clean">Clean Books</label>
+                <input type="number" placeholder="0" min="0" id="team2-add-clean" name="clean"/>
+                <label for"team2-add-dirty">Dirty Books</label>
+                <input type="number" placeholder="0" min="0" id="team2-add-dirty" name="dirty"/>
+                <label for"team2-add-numbered">Numbered</label>
+                <input type="number" placeholder="0" min="0" id="team2-add-numbered" name="cards-numbered"/>
+                <label for"team2-add-face">Face</label>
+                <input type="number" placeholder="0" min="0" id="team2-add-face" name="cards-face"/>
+                <label for"team2-add-wild">Wild</label>
+                <input type="number" placeholder="0" min="0" id="team2-add-wild" name="cards-wild"/>
+                <label for"team2-add-joker">Joker</label>
+                <input type="number" placeholder="0" min="0" id="team2-add-joker" name="cards-joker"/>
+                <br/>
+                <div id="team2-add-preview"></div>
+                <br/>
+                <button class="btn" type="submit" value="Enter">Enter</button>
+            </fieldset>
+        </form>
+    </div>
     <br/>
-    <form name="team2-subtract" class="team2" onsubmit="subtractPoints(this.className)" onchange="previewPoints(this)">
-        <fieldset>
-             <h4>Subtract Points</h4>
-             <h5>Individual Cards</h5>
-             <input type="number" placeholder="0" min="0" name="cards"/>
-             <br/>
-             <div id="team2-subtract-preview"></div>
-             <br/>
-             <button class="btn" type="submit" value="Enter">Enter</button>
-         </fieldset>
-     </form>
+    <div id="team2-subtract-collapse" class="collapse">
+        <form name="team2-subtract" class="team2" onsubmit="subtractPoints(this.className)" onchange="previewPoints(this)">
+            <fieldset>
+                <h4>Subtract Points</h4>
+                <label for"team2-subtract-numbered">Numbered</label>
+                <input type="number" placeholder="0" min="0" id="team2-subtract-numbered" name="cards-numbered"/>
+                <label for"team2-subtract-face">Face</label>
+                <input type="number" placeholder="0" min="0" id="team2-subtract-face" name="cards-face"/>
+                <label for"team2-subtract-wild">Wild</label>
+                <input type="number" placeholder="0" min="0" id="team2-subtract-wild" name="cards-wild"/>
+                <label for"team2-subtract-joker">Joker</label>
+                <input type="number" placeholder="0" min="0" id="team2-subtract-joker" name="cards-joker"/>
+                <label for"team2-subtract-red-three">Red Three</label>
+                <input type="number" placeholder="0" min="0" id="team2-subtract-red-three" name="cards-red-three"/>
+                <br/>
+                <div id="team2-subtract-preview"></div>
+                <br/>
+                <button class="btn" type="submit" value="Enter">Enter</button>
+            </fieldset>
+        </form>
+    </div>
     <br/>
     <h3>Team 3</h3>
-    <form name="team3-add" class="team3" onsubmit="addPoints(this.className)" onchange="previewPoints(this)">
-        <fieldset>
-            <h4>Add Points</h4>
-            <h5>Clean</h5>
-            <input type="number" placeholder="0" min="0" name="clean"/>
-            <h5>Dirty</h5>
-            <input type="number" placeholder="0" min="0" name="dirty"/>
-            <h5>Individual Cards</h5>
-            <input type="number" placeholder="0" min="0" name="cards"/>
-            <br/>
-            <div id="team3-add-preview"></div>
-            <br/>
-            <button class="btn" type="submit" value="Enter">Enter</button>
-        </fieldset>
-    </form>
+    <button class="btn btn-success" data-toggle="collapse" data-target="#team3-add-collapse">Add</button>
+    <button class="btn btn-danger" data-toggle="collapse" data-target="#team3-subtract-collapse">Subtract</button>
+    <div id="team3-add-collapse" class="collapse">
+        <form name="team3-add" class="team3" onsubmit="addPoints(this.className)" onchange="previewPoints(this)">
+            <fieldset>
+                <h4>Add Points</h4>
+                <label for="team3-add-clean">Clean Books</label>
+                <input type="number" placeholder="0" min="0" id="team3-add-clean" name="clean"/>
+                <label for"team3-add-dirty">Dirty Books</label>
+                <input type="number" placeholder="0" min="0" id="team3-add-dirty" name="dirty"/>
+                <label for"team3-add-numbered">Numbered</label>
+                <input type="number" placeholder="0" min="0" id="team3-add-numbered" name="cards-numbered"/>
+                <label for"team3-add-face">Face</label>
+                <input type="number" placeholder="0" min="0" id="team3-add-face" name="cards-face"/>
+                <label for"team3-add-wild">Wild</label>
+                <input type="number" placeholder="0" min="0" id="team3-add-wild" name="cards-wild"/>
+                <label for"team3-add-joker">Joker</label>
+                <input type="number" placeholder="0" min="0" id="team3-add-joker" name="cards-joker"/>
+                <br/>
+                <div id="team3-add-preview"></div>
+                <br/>
+                <button class="btn" type="submit" value="Enter">Enter</button>
+            </fieldset>
+        </form>
+    </div>
     <br/>
-    <form name="team3-subtract" class="team3" onsubmit="subtractPoints(this.className)" onchange="previewPoints(this)">
-        <fieldset>
-             <h4>Subtract Points</h4>
-             <h5>Individual Cards</h5>
-             <input type="number" placeholder="0" min="0" name="cards"/>
-             <br/>
-             <div id="team3-subtract-preview"></div>
-             <br/>
-             <button class="btn" type="submit" value="Enter">Enter</button>
-         </fieldset>
-     </form>
+    <div id="team3-subtract-collapse" class="collapse">
+        <form name="team3-subtract" class="team3" onsubmit="subtractPoints(this.className)" onchange="previewPoints(this)">
+            <fieldset>
+                <h4>Subtract Points</h4>
+                <label for"team3-subtract-numbered">Numbered</label>
+                <input type="number" placeholder="0" min="0" id="team3-subtract-numbered" name="cards-numbered"/>
+                <label for"team3-subtract-face">Face</label>
+                <input type="number" placeholder="0" min="0" id="team3-subtract-face" name="cards-face"/>
+                <label for"team3-subtract-wild">Wild</label>
+                <input type="number" placeholder="0" min="0" id="team3-subtract-wild" name="cards-wild"/>
+                <label for"team3-subtract-joker">Joker</label>
+                <input type="number" placeholder="0" min="0" id="team3-subtract-joker" name="cards-joker"/>
+                <label for"team3-subtract-red-three">Red Three</label>
+                <input type="number" placeholder="0" min="0" id="team3-subtract-red-three" name="cards-red-three"/>
+                <br/>
+                <div id="team3-subtract-preview"></div>
+                <br/>
+                <button class="btn" type="submit" value="Enter">Enter</button>
+            </fieldset>
+        </form>
+    </div>
     <br/>
     <h3>Team 4</h3>
-    <form name="team4-add" class="team4" onsubmit="addPoints(this.className)" onchange="previewPoints(this)">
-        <fieldset>
-            <h4>Add Points</h4>
-            <h5>Clean</h5>
-            <input type="number" placeholder="0" min="0" name="clean"/>
-            <h5>Dirty</h5>
-            <input type="number" placeholder="0" min="0" name="dirty"/>
-            <h5>Individual Cards</h5>
-            <input type="number" placeholder="0" min="0" name="cards"/>
-            <br/>
-            <div id="team4-add-preview"></div>
-            <br/>
-            <button class="btn" type="submit" value="Enter">Enter</button>
-        </fieldset>
-    </form>
+    <button class="btn btn-success" data-toggle="collapse" data-target="#team4-add-collapse">Add</button>
+    <button class="btn btn-danger" data-toggle="collapse" data-target="#team4-subtract-collapse">Subtract</button>
+    <div id="team4-add-collapse" class="collapse">
+        <form name="team4-add" class="team4" onsubmit="addPoints(this.className)" onchange="previewPoints(this)">
+            <fieldset>
+                <h4>Add Points</h4>
+                <label for="team4-add-clean">Clean Books</label>
+                <input type="number" placeholder="0" min="0" id="team4-add-clean" name="clean"/>
+                <label for"team4-add-dirty">Dirty Books</label>
+                <input type="number" placeholder="0" min="0" id="team4-add-dirty" name="dirty"/>
+                <label for"team4-add-numbered">Numbered</label>
+                <input type="number" placeholder="0" min="0" id="team4-add-numbered" name="cards-numbered"/>
+                <label for"team4-add-face">Face</label>
+                <input type="number" placeholder="0" min="0" id="team4-add-face" name="cards-face"/>
+                <label for"team4-add-wild">Wild</label>
+                <input type="number" placeholder="0" min="0" id="team4-add-wild" name="cards-wild"/>
+                <label for"team4-add-joker">Joker</label>
+                <input type="number" placeholder="0" min="0" id="team4-add-joker" name="cards-joker"/>
+                <br/>
+                <div id="team4-add-preview"></div>
+                <br/>
+                <button class="btn" type="submit" value="Enter">Enter</button>
+            </fieldset>
+        </form>
+    </div>
     <br/>
-    <form name="team4-subtract" class="team4" onsubmit="subtractPoints(this.className)" onchange="previewPoints(this)">
-        <fieldset>
-             <h4>Subtract Points</h4>
-             <h5>Individual Cards</h5>
-             <input type="number" placeholder="0" min="0" name="cards"/>
-             <br/>
-             <div id="team4-subtract-preview"></div>
-             <br/>
-             <button class="btn" type="submit" value="Enter">Enter</button>
-         </fieldset>
-     </form>
+    <div id="team4-subtract-collapse" class="collapse">
+        <form name="team4-subtract" class="team4" onsubmit="subtractPoints(this.className)" onchange="previewPoints(this)">
+            <fieldset>
+                <h4>Subtract Points</h4>
+                <label for"team4-subtract-numbered">Numbered</label>
+                <input type="number" placeholder="0" min="0" id="team4-subtract-numbered" name="cards-numbered"/>
+                <label for"team4-subtract-face">Face</label>
+                <input type="number" placeholder="0" min="0" id="team4-subtract-face" name="cards-face"/>
+                <label for"team4-subtract-wild">Wild</label>
+                <input type="number" placeholder="0" min="0" id="team4-subtract-wild" name="cards-wild"/>
+                <label for"team4-subtract-joker">Joker</label>
+                <input type="number" placeholder="0" min="0" id="team4-subtract-joker" name="cards-joker"/>
+                <label for"team4-subtract-red-three">Red Three</label>
+                <input type="number" placeholder="0" min="0" id="team4-subtract-red-three" name="cards-red-three"/>
+                <br/>
+                <div id="team4-subtract-preview"></div>
+                <br/>
+                <button class="btn" type="submit" value="Enter">Enter</button>
+            </fieldset>
+        </form>
+    </div>
     <br/>
     <h3>Team 5</h3>
-    <form name="team5-add" class="team5" onsubmit="addPoints(this.className)" onchange="previewPoints(this)">
-        <fieldset>
-            <h4>Add Points</h4>
-            <h5>Clean</h5>
-            <input type="number" placeholder="0" min="0" name="clean"/>
-            <h5>Dirty</h5>
-            <input type="number" placeholder="0" min="0" name="dirty"/>
-            <h5>Individual Cards</h5>
-            <input type="number" placeholder="0" min="0" name="cards"/>
-            <br/>
-            <div id="team5-add-preview"></div>
-            <br/>
-            <button class="btn" type="submit" value="Enter">Enter</button>
-        </fieldset>
-    </form>
+    <button class="btn btn-success" data-toggle="collapse" data-target="#team5-add-collapse">Add</button>
+    <button class="btn btn-danger" data-toggle="collapse" data-target="#team5-subtract-collapse">Subtract</button>
+    <div id="team5-add-collapse" class="collapse">
+        <form name="team5-add" class="team5" onsubmit="addPoints(this.className)" onchange="previewPoints(this)">
+            <fieldset>
+                <h4>Add Points</h4>
+                <label for="team5-add-clean">Clean Books</label>
+                <input type="number" placeholder="0" min="0" id="team5-add-clean" name="clean"/>
+                <label for"team5-add-dirty">Dirty Books</label>
+                <input type="number" placeholder="0" min="0" id="team5-add-dirty" name="dirty"/>
+                <label for"team5-add-numbered">Numbered</label>
+                <input type="number" placeholder="0" min="0" id="team5-add-numbered" name="cards-numbered"/>
+                <label for"team5-add-face">Face</label>
+                <input type="number" placeholder="0" min="0" id="team5-add-face" name="cards-face"/>
+                <label for"team5-add-wild">Wild</label>
+                <input type="number" placeholder="0" min="0" id="team5-add-wild" name="cards-wild"/>
+                <label for"team5-add-joker">Joker</label>
+                <input type="number" placeholder="0" min="0" id="team5-add-joker" name="cards-joker"/>
+                <br/>
+                <div id="team5-add-preview"></div>
+                <br/>
+                <button class="btn" type="submit" value="Enter">Enter</button>
+            </fieldset>
+        </form>
+    </div>
     <br/>
-    <form name="team5-subtract" class="team5" onsubmit="subtractPoints(this.className)" onchange="previewPoints(this)">
-        <fieldset>
-             <h4>Subtract Points</h4>
-             <h5>Individual Cards</h5>
-             <input type="number" placeholder="0" min="0" name="cards"/>
-             <br/>
-             <div id="team5-subtract-preview"></div>
-             <br/>
-             <button class="btn" type="submit" value="Enter">Enter</button>
-         </fieldset>
-     </form>
+    <div id="team5-subtract-collapse" class="collapse">
+        <form name="team5-subtract" class="team5" onsubmit="subtractPoints(this.className)" onchange="previewPoints(this)">
+            <fieldset>
+                <h4>Subtract Points</h4>
+                <label for"team5-subtract-numbered">Numbered</label>
+                <input type="number" placeholder="0" min="0" id="team5-subtract-numbered" name="cards-numbered"/>
+                <label for"team5-subtract-face">Face</label>
+                <input type="number" placeholder="0" min="0" id="team5-subtract-face" name="cards-face"/>
+                <label for"team5-subtract-wild">Wild</label>
+                <input type="number" placeholder="0" min="0" id="team5-subtract-wild" name="cards-wild"/>
+                <label for"team5-subtract-joker">Joker</label>
+                <input type="number" placeholder="0" min="0" id="team5-subtract-joker" name="cards-joker"/>
+                <label for"team5-subtract-red-three">Red Three</label>
+                <input type="number" placeholder="0" min="0" id="team5-subtract-red-three" name="cards-red-three"/>
+                <br/>
+                <div id="team5-subtract-preview"></div>
+                <br/>
+                <button class="btn" type="submit" value="Enter">Enter</button>
+            </fieldset>
+        </form>
+    </div>
     <br/>
-    <button class="btn" onclick="resetScore();" id="reset-score">Reset</button>
-    <h2>Score Board:</h2>
+    <button class="btn" onclick="resetScore();" id="reset-score">Reset Score</button>
+    <h2 id="score-board-header">Score Board:</h2>
     <div id="score-board">
-        <h3>Team 1</h3>
-        <p id="team1-score">0</p>
-        <h3>Team 2</h3>
-        <p id="team2-score">0</p>
-        <h3>Team 3</h3>
-        <p id="team3-score">0</p>
-        <h3>Team 4</h3>
-        <p id="team4-score">0</p>
-        <h3>Team 5</h3>
-        <p id="team5-score">0</p>
+        <p><b>Team 1: </b><span id="team1-score">0</span></p>
+        <p><b>Team 2: </b><span id="team2-score">0</span></p>
+        <p><b>Team 3: </b><span id="team3-score">0</span></p>
+        <p><b>Team 4: </b><span id="team4-score">0</span></p>
+        <p><b>Team 5: </b><span id="team5-score">0</span></p>
     </div>
 <script src="alabamaCanasta.js"></script>
 </body>
