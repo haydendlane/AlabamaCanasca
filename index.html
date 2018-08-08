@@ -10,9 +10,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
-        body {text-align: center;}
+        body {text-align: center; max-width: 320px;}
+        button {width: 100%; font-size: 1.2em !important; margin-bottom: 10px !important;}
         label {display: block;}
         #score-board-header {font-size: 1.4em;}
+        #score-board {font-size: 1.2em;}
     </style>
 </head>
 <body class="content container-fluid">
@@ -261,8 +263,6 @@
             </fieldset>
         </form>
     </div>
-    <br/>
-    <button class="btn btn-warning" onclick="resetScore();" id="reset-score">Reset Score</button>
     <h2 id="score-board-header">Score Board:</h2>
     <div id="score-board">
         <p><b>Team 1: </b><span id="team1-score">0</span></p>
@@ -271,6 +271,8 @@
         <p><b>Team 4: </b><span id="team4-score">0</span></p>
         <p><b>Team 5: </b><span id="team5-score">0</span></p>
     </div>
+    <br/>
+    <button class="btn btn-warning" onclick="resetScore();" id="reset-score">Reset Score</button>
 <script src="alabamaCanasta.js"></script>
 </body>
 </html>
