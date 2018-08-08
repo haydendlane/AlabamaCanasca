@@ -95,7 +95,7 @@ function resetScore() {
     event.preventDefault();
 
     var scoreBoard = document.getElementById("score-board");
-    var scoreBoardArray = scoreBoard.querySelectorAll("p");
+    var scoreBoardArray = scoreBoard.querySelectorAll("span");
     var confirmReset = confirm("Do you want to reset score?");
     if (confirmReset == true) {
         scoreBoardArray.forEach(function(score) {
