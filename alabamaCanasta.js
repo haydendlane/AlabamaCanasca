@@ -20,6 +20,19 @@ const CARDS_DICT = {
     redThree: 300
 };
 
+var scoreBoard = document.getElementById("score-board");
+var scoreBoardArray = scoreBoard.querySelectorAll("span");
+(function () {//scoreBoardArray.forEach(function(score) {
+    // score.innerHTML = "0";
+    for (var i=0; i < localStorage.length; i++) {
+        var re = /team*/;
+        if (localStorage.key(i) == localStorage.key(i).match(re).input) {
+            document.getElementById(localStorage.key(i)+"-score").innerHTML = localStorage.getItem(localStorage.key(i));
+        }
+    }
+//});
+})();
+
 // Input number of clean / dirty books & calculate
 
 function addPoints(team) {
@@ -101,8 +114,8 @@ function previewPoints(value) {
 function resetScore() {
     event.preventDefault();
 
-    var scoreBoard = document.getElementById("score-board");
-    var scoreBoardArray = scoreBoard.querySelectorAll("span");
+    // var scoreBoard = document.getElementById("score-board");
+    // var scoreBoardArray = scoreBoard.querySelectorAll("span");
     var confirmReset = confirm("Do you want to reset score?");
     if (confirmReset == true) {
         scoreBoardArray.forEach(function(score) {
