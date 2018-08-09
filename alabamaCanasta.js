@@ -1,12 +1,13 @@
 'use strict';
 
-var teams = [
-    {'Name': "team1", 'Points': 0},
-    {'Name': "team2", 'Points': 0},
-    {'Name': "team3", 'Points': 0},
-    {'Name': "team4", 'Points': 0},
-    {'Name': "team5", 'Points': 0}
-];
+if (!localStorage['team1']) {
+    localStorage.setItem('team1','0');
+    localStorage.setItem('team2','0');
+    localStorage.setItem('team3','0');
+    localStorage.setItem('team4','0');
+    localStorage.setItem('team5','0');
+}
+
 var counter = 0;
 
 const CLEAN_BOOK = 200;
@@ -25,15 +26,18 @@ function addPoints(team) {
     event.preventDefault();
 
     var team = team.toString();
-    var index = teams.findIndex(teams => teams.Name === team);
+    var score = Number(localStorage.getItem(team));
     var thisForm = document.forms[team + "-add"]
-    teams[index].Points += ((thisForm.elements.clean.value)*CLEAN_BOOK) + ((thisForm.elements.dirty.value)*DIRTY_BOOK) + 
+    score += ((thisForm.elements.clean.value)*CLEAN_BOOK) + ((thisForm.elements.dirty.value)*DIRTY_BOOK) + 
     ((thisForm.elements['cards-numbered'].value)*CARDS_DICT.numbered) + ((thisForm.elements['cards-face'].value)*CARDS_DICT.face) +
     ((thisForm.elements['cards-wild'].value)*CARDS_DICT.wild) + ((thisForm.elements['cards-joker'].value)*CARDS_DICT.joker);
-    document.getElementById(team+"-score").innerHTML = teams[index].Points;
+    
+    localStorage.setItem(team, score);
+    
+    document.getElementById(team+"-score").innerHTML = score;
 
     var thisFormInput = thisForm.getElementsByTagName("input");
-    for (let i=0; i < thisFormInput.length; i++) {
+    for (var i=0; i < thisFormInput.length; i++) {
         thisFormInput[i].value = 0;
     }
     var preview = document.getElementById(team + "-add-preview");
@@ -44,15 +48,18 @@ function subtractPoints(team) {
     event.preventDefault();
 
     var team = team.toString();
-    var index = teams.findIndex(teams => teams.Name === team);
+    var score = Number(localStorage.getItem(team));
     var thisForm = document.forms[team + "-subtract"]
-    teams[index].Points -= ((thisForm.elements['cards-numbered'].value)*CARDS_DICT.numbered) + ((thisForm.elements['cards-face'].value)*CARDS_DICT.face) +
+    score -= ((thisForm.elements['cards-numbered'].value)*CARDS_DICT.numbered) + ((thisForm.elements['cards-face'].value)*CARDS_DICT.face) +
     ((thisForm.elements['cards-wild'].value)*CARDS_DICT.wild) + ((thisForm.elements['cards-joker'].value)*CARDS_DICT.joker) +
     ((thisForm.elements['cards-red-three'].value)*CARDS_DICT.redThree);
-    document.getElementById(team+"-score").innerHTML = teams[index].Points;
+    
+    localStorage.setItem(team, score);
+    
+    document.getElementById(team+"-score").innerHTML = score;
 
     var thisFormInput = thisForm.getElementsByTagName("input");
-    for (let i=0; i < thisFormInput.length; i++) {
+    for (var i=0; i < thisFormInput.length; i++) {
         thisFormInput[i].value = 0;
     }
     var preview = document.getElementById(team + "-subtract-preview");
@@ -63,7 +70,7 @@ function previewPoints(value) {
     var preview = document.getElementById(value.name + "-preview");
     var previewPoints = 0;
     var thisFormInput = value.getElementsByTagName("input");
-    for (let i=0; i < thisFormInput.length; i++) {
+    for (var i=0; i < thisFormInput.length; i++) {
         switch(thisFormInput[i].name) {
             case "clean":
                 previewPoints += thisFormInput[i].value * CLEAN_BOOK;
@@ -101,12 +108,11 @@ function resetScore() {
         scoreBoardArray.forEach(function(score) {
             score.innerHTML = "0";
         });
-        teams = [
-            {'Name': "team1", 'Points': 0},
-            {'Name': "team2", 'Points': 0},
-            {'Name': "team3", 'Points': 0},
-            {'Name': "team4", 'Points': 0},
-            {'Name': "team5", 'Points': 0}
-        ];
+        for (var i=0; i < localStorage.length; i++) {
+            var re = /team*/;
+            if (localStorage.key(i) == localStorage.key(i).match(re).input) {
+                localStorage.setItem(localStorage.key(i), '0');
+            }
+        }
     }
 }
