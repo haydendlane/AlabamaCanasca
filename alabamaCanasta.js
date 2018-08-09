@@ -22,15 +22,13 @@ const CARDS_DICT = {
 
 var scoreBoard = document.getElementById("score-board");
 var scoreBoardArray = scoreBoard.querySelectorAll("span");
-(function () {//scoreBoardArray.forEach(function(score) {
-    // score.innerHTML = "0";
+(function () {
     for (var i=0; i < localStorage.length; i++) {
         var re = /team*/;
         if (localStorage.key(i) == localStorage.key(i).match(re).input) {
             document.getElementById(localStorage.key(i)+"-score").innerHTML = localStorage.getItem(localStorage.key(i));
         }
     }
-//});
 })();
 
 // Input number of clean / dirty books & calculate
@@ -55,6 +53,11 @@ function addPoints(team) {
     }
     var preview = document.getElementById(team + "-add-preview");
     preview.innerHTML = 0;
+
+    var collapseForm = document.getElementById(team + "-add-collapse");
+    collapseForm.className = "collapse";
+
+    highlightHighScore();
 }
 
 function subtractPoints(team) {
@@ -77,6 +80,11 @@ function subtractPoints(team) {
     }
     var preview = document.getElementById(team + "-subtract-preview");
     preview.innerHTML = 0;
+
+    var collapseForm = document.getElementById(team + "-subtract-collapse");
+    collapseForm.className = "collapse";
+
+    highlightHighScore();
 }
 
 function previewPoints(value) {
@@ -110,12 +118,34 @@ function previewPoints(value) {
     }
 }
 
+function highlightHighScore() {
+    var re = /team*/;
+    var scoreArray = [];
+    var highScore = -1000000;
+    var scoreBoardParaArray = document.getElementById("score-board").querySelectorAll("p");
+    scoreBoardParaArray.forEach(function(score) {
+        score.classList.remove("winning");
+    });
+    for (var i=0; i < localStorage.length; i++) {
+        if (localStorage.key(i) == localStorage.key(i).match(re).input) {
+            if (Number(localStorage.getItem(localStorage.key(i))) > highScore) {
+                scoreArray.push(localStorage.key(i));
+                console.log(localStorage.getItem(localStorage.key(i)));
+                console.log(highScore, "before");
+                highScore = localStorage.getItem(localStorage.key(i));
+                console.log(localStorage.key(i));
+                console.log(highScore, "after");
+            }
+        }
+    }
+    console.log(scoreArray);
+    document.getElementById(scoreArray[scoreArray.length-1]+"-p-score").className = "winning";
+}
+
 // Reset teams
 function resetScore() {
     event.preventDefault();
 
-    // var scoreBoard = document.getElementById("score-board");
-    // var scoreBoardArray = scoreBoard.querySelectorAll("span");
     var confirmReset = confirm("Do you want to reset score?");
     if (confirmReset == true) {
         scoreBoardArray.forEach(function(score) {
@@ -128,4 +158,8 @@ function resetScore() {
             }
         }
     }
+    var scoreBoardParaArray = document.getElementById("score-board").querySelectorAll("p");
+    scoreBoardParaArray.forEach(function(score) {
+        score.classList.remove("winning");
+    });
 }

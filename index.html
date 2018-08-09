@@ -16,10 +16,15 @@
     <style>
         body {text-align: center; max-width: 320px;}
         button {width: 100%; font-size: 1.4em !important; margin-bottom: 10px !important;}
+        form[name$="add"] {padding: 20px; background-color: rgba(92,184,92,0.2);}
+        form[name$="add"] button {background-color: rgba(92,184,92,0.8);}
+        form[name$="subtract"] {padding: 20px; background-color: rgba(185,82,79,0.2);}
+        form[name$="subtract"] button {background-color: rgba(185,82,79,0.8);}
         label {display: block; font-size: 1.1em;}
         input {width: 100%; font-size: 1.2em;}
         #score-board-header {font-size: 1.5em;}
         #score-board {font-size: 1.4em;}
+        .winning {background-color: rgba(92,184,92,0.2); font-weight: bold;}
         #reset-score {margin-bottom: 100px !important;}
     </style>
 </head>
@@ -31,7 +36,7 @@
     <div id="team1-add-collapse" class="collapse">
         <form name="team1-add" class="team1" onsubmit="addPoints(this.className)" onchange="previewPoints(this)">
         <fieldset>
-                <h4>Add Points</h4>
+                <h4 style="color:#5cb85c; font-weight: bold;">Add Points</h4>
                 <label for="team1-add-clean">Clean Books</label>
                 <input type="number" placeholder="0" min="0" pattern="\d*" id="team1-add-clean" name="clean"/>
                 <label for"team1-add-dirty">Dirty Books</label>
@@ -47,7 +52,7 @@
                 <br/>
                 <div id="team1-add-preview"></div>
                 <br/>
-                <button class="btn btn-info" type="submit" value="Enter">Enter</button>
+                <button class="btn btn-success" type="submit" value="Enter">Enter</button>
             </fieldset>
         </form>
     </div>
@@ -55,7 +60,7 @@
     <div id="team1-subtract-collapse" class="collapse">
         <form name="team1-subtract" class="team1" onsubmit="subtractPoints(this.className)" onchange="previewPoints(this)">
             <fieldset>
-                <h4>Subtract Points</h4>
+                <h4 style="color: #d9534f; font-weight: bold;">Subtract Points</h4>
                 <label for"team1-subtract-numbered">Numbered</label>
                 <input type="number" placeholder="0" min="0" pattern="\d*" id="team1-subtract-numbered" name="cards-numbered"/>
                 <label for"team1-subtract-face">Face</label>
@@ -69,7 +74,7 @@
                 <br/>
                 <div id="team1-subtract-preview"></div>
                 <br/>
-                <button class="btn btn-info" type="submit" value="Enter">Enter</button>
+                <button class="btn btn-danger" type="submit" value="Enter">Enter</button>
             </fieldset>
         </form>
     </div>
@@ -80,7 +85,7 @@
     <div id="team2-add-collapse" class="collapse">
         <form name="team2-add" class="team2" onsubmit="addPoints(this.className)" onchange="previewPoints(this)">
             <fieldset>
-                <h4>Add Points</h4>
+                <h4 style="color:#5cb85c; font-weight: bold;">Add Points</h4>
                 <label for="team2-add-clean">Clean Books</label>
                 <input type="number" placeholder="0" min="0" pattern="\d*" id="team2-add-clean" name="clean"/>
                 <label for"team2-add-dirty">Dirty Books</label>
@@ -96,7 +101,7 @@
                 <br/>
                 <div id="team2-add-preview"></div>
                 <br/>
-                <button class="btn btn-info" type="submit" value="Enter">Enter</button>
+                <button class="btn btn-success" type="submit" value="Enter">Enter</button>
             </fieldset>
         </form>
     </div>
@@ -104,7 +109,7 @@
     <div id="team2-subtract-collapse" class="collapse">
         <form name="team2-subtract" class="team2" onsubmit="subtractPoints(this.className)" onchange="previewPoints(this)">
             <fieldset>
-                <h4>Subtract Points</h4>
+                <h4 style="color: #d9534f; font-weight: bold;">Subtract Points</h4>
                 <label for"team2-subtract-numbered">Numbered</label>
                 <input type="number" placeholder="0" min="0" pattern="\d*" id="team2-subtract-numbered" name="cards-numbered"/>
                 <label for"team2-subtract-face">Face</label>
@@ -118,7 +123,7 @@
                 <br/>
                 <div id="team2-subtract-preview"></div>
                 <br/>
-                <button class="btn btn-info" type="submit" value="Enter">Enter</button>
+                <button class="btn btn-danger" type="submit" value="Enter">Enter</button>
             </fieldset>
         </form>
     </div>
@@ -129,7 +134,7 @@
     <div id="team3-add-collapse" class="collapse">
         <form name="team3-add" class="team3" onsubmit="addPoints(this.className)" onchange="previewPoints(this)">
             <fieldset>
-                <h4>Add Points</h4>
+                <h4 style="color:#5cb85c; font-weight: bold;">Add Points</h4>
                 <label for="team3-add-clean">Clean Books</label>
                 <input type="number" placeholder="0" min="0" pattern="\d*" id="team3-add-clean" name="clean"/>
                 <label for"team3-add-dirty">Dirty Books</label>
@@ -145,7 +150,7 @@
                 <br/>
                 <div id="team3-add-preview"></div>
                 <br/>
-                <button class="btn btn-info" type="submit" value="Enter">Enter</button>
+                <button class="btn btn-success" type="submit" value="Enter">Enter</button>
             </fieldset>
         </form>
     </div>
@@ -153,7 +158,7 @@
     <div id="team3-subtract-collapse" class="collapse">
         <form name="team3-subtract" class="team3" onsubmit="subtractPoints(this.className)" onchange="previewPoints(this)">
             <fieldset>
-                <h4>Subtract Points</h4>
+                <h4 style="color: #d9534f; font-weight: bold;">Subtract Points</h4>
                 <label for"team3-subtract-numbered">Numbered</label>
                 <input type="number" placeholder="0" min="0" pattern="\d*" id="team3-subtract-numbered" name="cards-numbered"/>
                 <label for"team3-subtract-face">Face</label>
@@ -167,7 +172,7 @@
                 <br/>
                 <div id="team3-subtract-preview"></div>
                 <br/>
-                <button class="btn btn-info" type="submit" value="Enter">Enter</button>
+                <button class="btn btn-danger" type="submit" value="Enter">Enter</button>
             </fieldset>
         </form>
     </div>
@@ -178,7 +183,7 @@
     <div id="team4-add-collapse" class="collapse">
         <form name="team4-add" class="team4" onsubmit="addPoints(this.className)" onchange="previewPoints(this)">
             <fieldset>
-                <h4>Add Points</h4>
+                <h4 style="color:#5cb85c; font-weight: bold;">Add Points</h4>
                 <label for="team4-add-clean">Clean Books</label>
                 <input type="number" placeholder="0" min="0" pattern="\d*" id="team4-add-clean" name="clean"/>
                 <label for"team4-add-dirty">Dirty Books</label>
@@ -194,7 +199,7 @@
                 <br/>
                 <div id="team4-add-preview"></div>
                 <br/>
-                <button class="btn btn-info" type="submit" value="Enter">Enter</button>
+                <button class="btn btn-success" type="submit" value="Enter">Enter</button>
             </fieldset>
         </form>
     </div>
@@ -202,7 +207,7 @@
     <div id="team4-subtract-collapse" class="collapse">
         <form name="team4-subtract" class="team4" onsubmit="subtractPoints(this.className)" onchange="previewPoints(this)">
             <fieldset>
-                <h4>Subtract Points</h4>
+                <h4 style="color: #d9534f; font-weight: bold;">Subtract Points</h4>
                 <label for"team4-subtract-numbered">Numbered</label>
                 <input type="number" placeholder="0" min="0" pattern="\d*" id="team4-subtract-numbered" name="cards-numbered"/>
                 <label for"team4-subtract-face">Face</label>
@@ -216,7 +221,7 @@
                 <br/>
                 <div id="team4-subtract-preview"></div>
                 <br/>
-                <button class="btn btn-info" type="submit" value="Enter">Enter</button>
+                <button class="btn btn-danger" type="submit" value="Enter">Enter</button>
             </fieldset>
         </form>
     </div>
@@ -227,7 +232,7 @@
     <div id="team5-add-collapse" class="collapse">
         <form name="team5-add" class="team5" onsubmit="addPoints(this.className)" onchange="previewPoints(this)">
             <fieldset>
-                <h4>Add Points</h4>
+                <h4 style="color:#5cb85c; font-weight: bold;">Add Points</h4>
                 <label for="team5-add-clean">Clean Books</label>
                 <input type="number" placeholder="0" min="0" pattern="\d*" id="team5-add-clean" name="clean"/>
                 <label for"team5-add-dirty">Dirty Books</label>
@@ -243,7 +248,7 @@
                 <br/>
                 <div id="team5-add-preview"></div>
                 <br/>
-                <button class="btn btn-info" type="submit" value="Enter">Enter</button>
+                <button class="btn btn-success" type="submit" value="Enter">Enter</button>
             </fieldset>
         </form>
     </div>
@@ -251,7 +256,7 @@
     <div id="team5-subtract-collapse" class="collapse">
         <form name="team5-subtract" class="team5" onsubmit="subtractPoints(this.className)" onchange="previewPoints(this)">
             <fieldset>
-                <h4>Subtract Points</h4>
+                <h4 style="color: #d9534f; font-weight: bold;">Subtract Points</h4>
                 <label for"team5-subtract-numbered">Numbered</label>
                 <input type="number" placeholder="0" min="0" pattern="\d*" id="team5-subtract-numbered" name="cards-numbered"/>
                 <label for"team5-subtract-face">Face</label>
@@ -265,17 +270,17 @@
                 <br/>
                 <div id="team5-subtract-preview"></div>
                 <br/>
-                <button class="btn btn-info" type="submit" value="Enter">Enter</button>
+                <button class="btn btn-danger" type="submit" value="Enter">Enter</button>
             </fieldset>
         </form>
     </div>
     <h2 id="score-board-header">Score Board:</h2>
     <div id="score-board">
-        <p><b>Team 1: </b><span id="team1-score">0</span></p>
-        <p><b>Team 2: </b><span id="team2-score">0</span></p>
-        <p><b>Team 3: </b><span id="team3-score">0</span></p>
-        <p><b>Team 4: </b><span id="team4-score">0</span></p>
-        <p><b>Team 5: </b><span id="team5-score">0</span></p>
+        <p id="team1-p-score"><b>Team 1: </b><span id="team1-score">0</span></p>
+        <p id="team2-p-score"><b>Team 2: </b><span id="team2-score">0</span></p>
+        <p id="team3-p-score"><b>Team 3: </b><span id="team3-score">0</span></p>
+        <p id="team4-p-score"><b>Team 4: </b><span id="team4-score">0</span></p>
+        <p id="team5-p-score"><b>Team 5: </b><span id="team5-score">0</span></p>
     </div>
     <br/>
     <button class="btn btn-warning" onclick="resetScore();" id="reset-score">Reset Score</button>
