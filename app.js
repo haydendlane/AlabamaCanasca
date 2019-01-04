@@ -15,7 +15,7 @@ const DIRTY_BOOK = 100;
 const CARDS_DICT = {
     numbered: 5,
     face: 10,
-    wild: 30,
+    wild: 20,
     joker: 50,
     redThree: 300
 };
@@ -49,15 +49,15 @@ function addPoints(team) {
 
     var thisFormInput = thisForm.getElementsByTagName("input");
     for (var i=0; i < thisFormInput.length; i++) {
-        thisFormInput[i].value = 0;
+        thisFormInput[i].value = "";
     }
     var preview = document.getElementById(team + "-add-preview");
     preview.innerHTML = 0;
 
-    var collapseForm = document.getElementById(team + "-add-collapse");
-    collapseForm.className = "collapse";
+    // var collapseForm = document.getElementById(team + "-add-collapse");
+    // collapseForm.className = "collapse";
 
-    highlightHighScore();
+    // highlightHighScore();
 }
 
 function subtractPoints(team) {
@@ -76,15 +76,15 @@ function subtractPoints(team) {
 
     var thisFormInput = thisForm.getElementsByTagName("input");
     for (var i=0; i < thisFormInput.length; i++) {
-        thisFormInput[i].value = 0;
+        thisFormInput[i].value = "";
     }
     var preview = document.getElementById(team + "-subtract-preview");
     preview.innerHTML = 0;
 
-    var collapseForm = document.getElementById(team + "-subtract-collapse");
-    collapseForm.className = "collapse";
+    // var collapseForm = document.getElementById(team + "-subtract-collapse");
+    // collapseForm.className = "collapse";
 
-    highlightHighScore();
+    // highlightHighScore();
 }
 
 function previewPoints(value) {
@@ -118,29 +118,29 @@ function previewPoints(value) {
     }
 }
 
-function highlightHighScore() {
-    var re = /team*/;
-    var scoreArray = [];
-    var highScore = -1000000;
-    var scoreBoardParaArray = document.getElementById("score-board").querySelectorAll("p");
-    scoreBoardParaArray.forEach(function(score) {
-        score.classList.remove("winning");
-    });
-    for (var i=0; i < localStorage.length; i++) {
-        if (localStorage.key(i) == localStorage.key(i).match(re).input) {
-            if (Number(localStorage.getItem(localStorage.key(i))) > highScore) {
-                scoreArray.push(localStorage.key(i));
-                console.log(localStorage.getItem(localStorage.key(i)));
-                console.log(highScore, "before");
-                highScore = localStorage.getItem(localStorage.key(i));
-                console.log(localStorage.key(i));
-                console.log(highScore, "after");
-            }
-        }
-    }
-    console.log(scoreArray);
-    document.getElementById(scoreArray[scoreArray.length-1]+"-p-score").className = "winning";
-}
+// function highlightHighScore() {
+//     var re = /team*/;
+//     var scoreArray = [];
+//     var highScore = -1000000;
+//     var scoreBoardParaArray = document.getElementById("score-board").querySelectorAll("p");
+//     scoreBoardParaArray.forEach(function(score) {
+//         score.classList.remove("winning");
+//     });
+//     for (var i=0; i < localStorage.length; i++) {
+//         if (localStorage.key(i) == localStorage.key(i).match(re).input) {
+//             if (Number(localStorage.getItem(localStorage.key(i))) > highScore) {
+//                 scoreArray.push(localStorage.key(i));
+//                 console.log(localStorage.getItem(localStorage.key(i)));
+//                 console.log(highScore, "before");
+//                 highScore = localStorage.getItem(localStorage.key(i));
+//                 console.log(localStorage.key(i));
+//                 console.log(highScore, "after");
+//             }
+//         }
+//     }
+//     console.log(scoreArray);
+//     document.getElementById(scoreArray[scoreArray.length-1]+"-p-score").className = "winning";
+// }
 
 // Reset teams
 function resetScore() {
