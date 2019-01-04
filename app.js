@@ -33,7 +33,6 @@ var scoreBoardArray = scoreBoard.querySelectorAll("span");
 
 // Input number of clean / dirty books & calculate
 
-
 function addPoints(team) {
     event.preventDefault();
 
