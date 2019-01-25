@@ -10,8 +10,8 @@ if (!localStorage['team1']) {
 
 var counter = 0;
 
-const CLEAN_BOOK = 200;
-const DIRTY_BOOK = 100;
+const CLEAN_BOOK = 500;
+const DIRTY_BOOK = 300;
 const CARDS_DICT = {
     numbered: 5,
     face: 10,
@@ -42,7 +42,8 @@ function addPoints(team) {
     var thisForm = document.forms[team + "-add"]
     score += ((thisForm.elements.clean.value)*CLEAN_BOOK) + ((thisForm.elements.dirty.value)*DIRTY_BOOK) + 
     ((thisForm.elements['cards-numbered'].value)*CARDS_DICT.numbered) + ((thisForm.elements['cards-face'].value)*CARDS_DICT.face) +
-    ((thisForm.elements['cards-wild'].value)*CARDS_DICT.wild) + ((thisForm.elements['cards-joker'].value)*CARDS_DICT.joker);
+    ((thisForm.elements['cards-wild'].value)*CARDS_DICT.wild) + ((thisForm.elements['cards-joker'].value)*CARDS_DICT.joker) + 
+    ((thisForm.elements['bonus'].value)*1);
     
     localStorage.setItem(team, score);
     
@@ -114,6 +115,9 @@ function previewPoints(value) {
                 break;
             case "cards-red-three":
                 previewPoints += thisFormInput[i].value * CARDS_DICT.redThree;
+                break;
+            case "bonus":
+                previewPoints += thisFormInput[i].value * 1;
         }
         preview.innerHTML = previewPoints;
     }
