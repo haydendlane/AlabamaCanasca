@@ -26,7 +26,8 @@
         #score-board-header {font-size: 1.5em;}
         #score-board {font-size: 1.4em;}
         .winning {background-color: rgba(92,184,92,0.2); font-weight: bold;}
-        #reset-score {margin-bottom: 100px !important;}
+        #reset-score {margin-bottom: 30px !important;}
+        .rules {padding: 10px 20px 20px 20px; background-color: rgba(53, 53, 53, 0.2)}
     </style>
 </head>
 <body class="content container-fluid">
@@ -90,6 +91,24 @@
     </div>
     <br/>
     <button class="btn btn-warning" onclick="resetScore();" id="reset-score">Reset Score</button>
+    <div class="rules">
+        <h2>Rules</h2>
+        <hr style="border-color: #000"/>
+        <h3>Points Needed To Lay Down</h3>
+        <p>Round Number</p>
+        <ol style="text-align:left">
+            <li>50pts</li>
+            <li>90pts</li>
+            <li>120pts</li>
+            <li>180pts</li>
+        </ol>
+        <h3>How To Score Bonus Points</h3>
+        <ul style="text-align:left">
+            <li>Drawing 24 cards exactly: 100pts</li>
+            <li>Going out first in a round: 500pts</li>
+            <li>Laying down 1 clean book at once: 100pts</li>
+        </ul>
+    </div>
 <script src="app.js"></script>
 </body>
 </html>
