@@ -8,8 +8,6 @@ if (!localStorage['team1']) {
     localStorage.setItem('team5','0');
 }
 
-var counter = 0;
-
 const CLEAN_BOOK = 500;
 const DIRTY_BOOK = 300;
 const CARDS_DICT = {
