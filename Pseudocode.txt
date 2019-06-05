@@ -13,6 +13,6 @@ Wishlist:
 1. Allow points to be saved in LocalStorage to preserve points after refresh - DONE
 2. Allow user to push + or - buttons next to fields
 3. Show round # and allow user to advance up to 5(?) rounds
-4. Show user minimum points required to play cards depending on round
+4. Show user minimum points required to play cards depending on round - DONE
 5. Allow user to edit previous entries in case of typos
 6. Allow custom team names to be created
